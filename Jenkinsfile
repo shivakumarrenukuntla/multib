@@ -1,14 +1,14 @@
 node('built-in') 
 {
-    stage('cntdownload') 
+    stage('cntdownload_loans') 
     {
     git branch: 'main', url: 'https://github.com/shivakumarrenukuntla/multib.git'
     }
-        stage('contbuild')
+        stage('contbuild_loans')
     {
         sh 'mvn package'
     }
-        stage('contdeployment')
+        stage('contdeployment_loans')
         {
             sh '''
 ssh ubuntu@172.31.81.88 "sudo mkdir -p /var/lib/tomcat10/webapps/"
