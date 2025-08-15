@@ -22,7 +22,7 @@ scp /home/ubuntu/.jenkins/workspace/spl/webapp/target/webapp.war ubuntu@172.31.8
          }
          stage('contdelivery')
          {
-             input 'waiting for delivery manager approval'
-             sh 'scp /home/ubuntu/.jenkins/workspace/spl/webapp/target/webapp.war ubuntu@172.31.83.231:/var/lib/tomcat10/webapps/userpg.war'
+             
+             sh 'scp /home/ubuntu/.jenkins/workspace/multib/webapp/target/webapp.war ubuntu@172.31.83.231:/var/lib/tomcat10/webapps/userpg.war'
          }
     }
