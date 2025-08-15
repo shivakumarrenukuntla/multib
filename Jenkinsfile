@@ -12,17 +12,17 @@ node('built-in')
         {
             sh '''
 ssh ubuntu@172.31.81.88 "sudo mkdir -p /var/lib/tomcat10/webapps/"
-scp /home/ubuntu/.jenkins/workspace/spl/webapp/target/webapp.war ubuntu@172.31.81.88:/var/lib/tomcat10/webapps/testpg.war
+scp /home/ubuntu/.jenkins/workspace/multib_main/webapp/target/webapp.war ubuntu@172.31.81.88:/var/lib/tomcat10/webapps/testpg.war
 '''
          }
          stage('conttesting')
          {
              git 'https://github.com/shivakumarrenukuntla/FunctionalTesting.git'
-            sh 'java -jar /home/ubuntu/.jenkins/workspace/multib_main/testing.jar'
+            sh 'java -jar /home/ubuntu/.jenkins/workspace/multib_loans/testing.jar'
          }
          stage('contdelivery')
          {
              
-             sh 'scp /home/ubuntu/.jenkins/workspace/multib/webapp/target/webapp.war ubuntu@172.31.83.231:/var/lib/tomcat10/webapps/userpg.war'
+             sh 'scp /home/ubuntu/.jenkins/workspace/multib_main/webapp/target/webapp.war ubuntu@172.31.83.231:/var/lib/tomcat10/webapps/userpg.war'
          }
     }
