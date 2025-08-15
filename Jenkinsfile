@@ -2,7 +2,7 @@ node('built-in')
 {
     stage('cntdownload') 
     {
-    git branch: 'main', url: 'https://github.com/shivakumarrenukuntla/spl.git'
+    git branch: 'main', url: 'https://github.com/shivakumarrenukuntla/multib.git'
     }
         stage('contbuild')
     {
@@ -18,7 +18,7 @@ scp /home/ubuntu/.jenkins/workspace/spl/webapp/target/webapp.war ubuntu@172.31.8
          stage('conttesting')
          {
              git 'https://github.com/shivakumarrenukuntla/FunctionalTesting.git'
-            sh 'java -jar /home/ubuntu/.jenkins/workspace/spl/testing.jar'
+            sh 'java -jar /home/ubuntu/.jenkins/workspace/multib/testing.jar'
          }
          stage('contdelivery')
          {
